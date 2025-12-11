@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",   # For local testing
+        #"http://localhost:5173",   # For local testing
         "https://www.vizgiri.com", # Frontend production domain
         "https://vizgiri.com"      # Optional, if users access without www
     ],
