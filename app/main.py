@@ -5,6 +5,18 @@ import io
 import numpy as np
 
 app = FastAPI()
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",   # For local testing
+        "https://www.vizgiri.com", # Frontend production domain
+        "https://vizgiri.com"      # Optional, if users access without www
+    ],
+    allow_methods=["*"],  # Allow GET, POST, etc.
+    allow_headers=["*"],  # Allow headers like Content-Type
+)
 
 # Allow local dev + eventual frontend domain
 app.add_middleware(
